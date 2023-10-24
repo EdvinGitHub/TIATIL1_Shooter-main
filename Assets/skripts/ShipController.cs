@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Rendering;
 public class ShipController : MonoBehaviour
 {
   int CurrentHp = 1;
@@ -15,12 +16,14 @@ public class ShipController : MonoBehaviour
   }
 
   [SerializeField]
-  GameObject bulletPrefab;
+  GameObject bulletPrefab1;
+  [SerializeField]
+  GameObject bulletPrefab2;
   [SerializeField]
   Transform gunPosition;
 
   [SerializeField]
-  float speed = 5f;
+  float whatGun = 0;
   [SerializeField]
   Slider HealthSlider;
   [SerializeField]
@@ -42,17 +45,17 @@ public class ShipController : MonoBehaviour
     transform.Translate(movement);
 
 
-    if (Mathf.Abs(transform.position.y) < -Camera.main.orthographicSize - 0.5)
+    if (Mathf.Abs(transform.position.y) > Camera.main.orthographicSize - 0.6)
     {
 
-      transform.Translate(Vector2.up  * movement.y);
+      transform.Translate(Vector2.down * movement.y);
 
     }
-    if (transform.position.y > Camera.main.orthographicSize - 0.5)
-    {
-       transform.Translate(Vector2.down * movement.y);
+    // if (transform.position.y > Camera.main.orthographicSize - 0.5)
+    // {
+    //    transform.Translate(Vector2.down * movement.y);
      
-    }
+    // }
 
     print(Camera.main.aspect);
 
@@ -61,13 +64,28 @@ public class ShipController : MonoBehaviour
       transform.Translate(Vector2.left * movement.x);
   
     }
-
+    if(Input.GetKeyDown(KeyCode.X))
+    {
+      whatGun = 1; 
+    }
+    if(Input.GetKeyDown(KeyCode.Z))
+    {
+      whatGun = 0; 
+    }
     shotTimer += Time.deltaTime;
 
     if (Input.GetAxisRaw("Fire1") > 0 && shotTimer > timeBetweenShots)
     {
-      Instantiate(bulletPrefab, gunPosition.position, Quaternion.identity);
+      if (whatGun == 0)
+      {
+      Instantiate(bulletPrefab1, gunPosition.position, Quaternion.identity);
       shotTimer = 0;
+      }
+      if (whatGun == 1)
+      {
+      Instantiate(bulletPrefab2, gunPosition.position, Quaternion.identity);
+      shotTimer = 0;
+      }
     }
 
   }

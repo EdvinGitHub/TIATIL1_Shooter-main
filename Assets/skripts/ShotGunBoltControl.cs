@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoltController : MonoBehaviour
+public class ShotGunBoltControl : MonoBehaviour
 {
-  // Start is called before the first frame update
-  // [SerializeField]
+ 
+    float speed = 10;
 
-  // Update is called once per frame
-  float speed = 4;
-  void Update()
-  {
 
-    Vector2 movement = new Vector2(0, speed) * Time.deltaTime;
+    void Update()
+    {
+         Vector2 movement = new Vector2(0, speed) * Time.deltaTime;
 
     transform.Translate(movement);
 
@@ -20,8 +18,9 @@ public class BoltController : MonoBehaviour
     {
       Destroy(this.gameObject);
     }
-  }
+    }
 
+    
    private void OnTriggerEnter2D(Collider2D other)
   {
 
