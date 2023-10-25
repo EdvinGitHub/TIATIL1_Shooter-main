@@ -34,6 +34,7 @@ public class ShipController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    Quaternion rotation = Quaternion.Euler(0, 0, 0);
     float speed = 5; // rutor per sekund
 
     float moveX = Input.GetAxisRaw("Horizontal");
@@ -83,8 +84,15 @@ public class ShipController : MonoBehaviour
       }
       if (whatGun == 1)
       {
-      Instantiate(bulletPrefab2, gunPosition.position, Quaternion.identity);
-      shotTimer = 0;
+        rotation.z = -0.6f;
+        for(int i = 5; i > 0; i--)
+        {
+          rotation.z +=0.2f;
+
+          Instantiate(bulletPrefab2, gunPosition.position, rotation);
+          shotTimer = 0;
+  
+        }
       }
     }
 

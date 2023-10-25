@@ -223,7 +223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 3/3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -425,6 +425,18 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 1287502262990996, guid: 4dd15c7fe51711c48ba135fef149bbf8,
+        type: 3}
+    - target: {fileID: 4287910744157388697, guid: 08a11ac572b1de04c89ee9c5500c84a0,
+        type: 3}
+      propertyPath: bulletPrefab1
+      value: 
+      objectReference: {fileID: 1287502262990996, guid: 4dd15c7fe51711c48ba135fef149bbf8,
+        type: 3}
+    - target: {fileID: 4287910744157388697, guid: 08a11ac572b1de04c89ee9c5500c84a0,
+        type: 3}
+      propertyPath: bulletPrefab2
+      value: 
+      objectReference: {fileID: 1287502262990996, guid: c896587613106a84fb5d0522399ed203,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08a11ac572b1de04c89ee9c5500c84a0, type: 3}

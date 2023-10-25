@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShotGunBoltControl : MonoBehaviour
 {
  
-    float speed = 10;
+    float speed = 5;
 
 
     void Update()
