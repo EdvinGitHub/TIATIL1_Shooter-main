@@ -8,7 +8,7 @@ public class BoltController : MonoBehaviour
   // [SerializeField]
 
   // Update is called once per frame
-  float speed = 4;
+  float speed = 5;
   void Update()
   {
 

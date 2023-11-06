@@ -11,5 +11,9 @@ public class SceneControler : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void Gotoscene0()
+    {
+        SceneManager.LoadScene(0);
+    }
 
 }

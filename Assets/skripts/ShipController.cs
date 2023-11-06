@@ -88,7 +88,6 @@ public class ShipController : MonoBehaviour
         for(int i = 5; i > 0; i--)
         {
           rotation.z +=0.2f;
-
           Instantiate(bulletPrefab2, gunPosition.position, rotation);
           shotTimer = 0;
   

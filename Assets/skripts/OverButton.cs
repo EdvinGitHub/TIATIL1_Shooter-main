@@ -1,6 +1,8 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class OverButton : MonoBehaviour
@@ -9,8 +11,13 @@ public class OverButton : MonoBehaviour
  
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        SceneManager.LoadScene(0);
+    
+        
+    }
+    public void LoadScene(int sceneNumbur)
+    {
+        SceneManager.LoadScene(sceneNumbur);
     }
 }
