@@ -13,22 +13,35 @@ public class EnemySpawnControler : MonoBehaviour
 
     float timeBetweenEnemies = 1.5f;
     int enemyAB;
+    int enemySpawned;
     void Update()
     {
         timer += Time.deltaTime;
         if (timer > timeBetweenEnemies)
         {
-            enemyAB = Random.Range(0,3);
-            if(enemyAB == 0)
+            int numberToSpawn = 1 + enemySpawned / 3;
+
+            for(int i =0; i < numberToSpawn; numberToSpawn--)
             {
-            Instantiate(EnemyPrefab2);
+                enemyAB = Random.Range(0, 3);
+                if (enemyAB == 0)
+                {
+                    Instantiate(EnemyPrefab2);
+                }
+                else
+                {
+                    Instantiate(EnemyPrefab);
+                }
             }
-            else
-            {
-            Instantiate(EnemyPrefab);
-            }
+            enemySpawned++;
+
             timer = 0;
+
+
+
+            // for (int i = 15, enemySpawned / i )
         }
+
     }
 
 

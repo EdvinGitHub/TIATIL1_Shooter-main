@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameOver.unity
     guid: df777b74de928b241b92eff4e6ad9133
+  - enabled: 1
+    path: Assets/StartGame.unity
+    guid: b3b75411d03b250448cf611deaf2bccd
   m_configObjects: {}

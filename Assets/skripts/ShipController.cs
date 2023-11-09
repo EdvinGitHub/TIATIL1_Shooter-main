@@ -17,8 +17,7 @@ public class ShipController : MonoBehaviour
 
   [SerializeField]
   GameObject bulletPrefab1;
-  [SerializeField]
-  GameObject bulletPrefab2;
+
   [SerializeField]
   Transform gunPosition;
 
@@ -88,7 +87,7 @@ public class ShipController : MonoBehaviour
         for(int i = 5; i > 0; i--)
         {
           rotation.z +=0.2f;
-          Instantiate(bulletPrefab2, gunPosition.position, rotation);
+          Instantiate(bulletPrefab1, gunPosition.position, rotation);
           shotTimer = 0;
   
         }
