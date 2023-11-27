@@ -23,6 +23,13 @@ public class bossBolt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    float moveX = Input.GetAxisRaw("Horizontal");
+    float moveY = Input.GetAxisRaw("Vertical");
+    Vector2 movement = new Vector2(moveX, moveY);
+    if (Mathf.Abs(transform.position.x) > Camera.main.orthographicSize * Camera.main.aspect -0.5)
+    {
+      transform.Translate(Vector2.left * movement.x);
+  
+    }
     }
 }

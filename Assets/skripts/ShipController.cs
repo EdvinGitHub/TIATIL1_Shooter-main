@@ -90,13 +90,14 @@ public class ShipController : MonoBehaviour
         {
           rotation.z +=0.2f;
           Instantiate(bulletPrefab1, gunPosition.position, rotation);
-          shotTimer = 0;
-          amountOfShots--;
 
         }
+          shotTimer = 0;
+        amountOfShots--;
         if (amountOfShots <= 0)
         {
-          whatGun=1;
+          whatGun=0;
+          amountOfShots=20;
         }
       }
     }

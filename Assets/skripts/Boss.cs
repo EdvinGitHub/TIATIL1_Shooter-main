@@ -29,7 +29,7 @@ public class Boss : MonoBehaviour
     int whatShot;
     float timeBetweenShots = 1.5f;
     int CurrentHp = 1;
-    int maxhp = 100;
+    int maxhp = 45;
   
     void Start()
     {

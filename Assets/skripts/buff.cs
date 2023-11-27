@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class buff : MonoBehaviour
 {
-  
+  float speed = 6;
+
     void Update()
     {
-    
+        Vector2 movement = new Vector2(0, -speed) * Time.deltaTime;
+
+        transform.Translate(movement);
+        if (transform.position.y < -Camera.main.orthographicSize - 2)
+        {
+            GameObject.Destroy(this.gameObject);
+        }
+        
+    }
         void OnTriggerEnter2D(Collider2D other)
         {
-        if (other.gameObject.tag == "Player")
-        {
-            Destroy(this.gameObject);
+            if (other.gameObject.tag == "Player")
+            {
+                Destroy(this.gameObject);
+            }
         }
-        }
-    }
 }

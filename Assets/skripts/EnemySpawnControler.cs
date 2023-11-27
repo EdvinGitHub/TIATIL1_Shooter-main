@@ -44,7 +44,7 @@ public class EnemySpawnControler : MonoBehaviour
             }
             if(i < amount)
             {
-                i += enemySpawned * 7;
+                i += enemySpawned * 20;
                 Instantiate(EnemyPrefab3);
             }
             enemySpawned++;

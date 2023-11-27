@@ -55,27 +55,27 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        buffOrNot = Random.Range(1,10);
+        buffOrNot = Random.Range(1,11);
         if (other.gameObject.tag == "bolt")
         {
-            Destroy(this.gameObject);
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             if(buffOrNot ==10)
             {
             GameObject buff = Instantiate(buffPrefab, transform.position, Quaternion.identity);
             }
+            Destroy(this.gameObject);
             
             Destroy(explosion, 0.3f);
 
         }
         if (other.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             if(buffOrNot ==10)
             {
             GameObject buff = Instantiate(buffPrefab, transform.position, Quaternion.identity);
             }
+            Destroy(this.gameObject);
             Destroy(explosion, 0.3f);
 
         }
