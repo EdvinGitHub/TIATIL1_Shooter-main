@@ -22,7 +22,7 @@ public class ShipController : MonoBehaviour
   Transform gunPosition;
 
   [SerializeField]
-  float whatGun = 0;
+  float whatGun = 1;
   [SerializeField]
   Slider HealthSlider;
   [SerializeField]

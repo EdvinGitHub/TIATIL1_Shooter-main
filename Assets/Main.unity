@@ -624,7 +624,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744000529}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b834406e9fc02eb4bbc2973ef4e9e204, type: 3}
   m_Name: 
@@ -701,7 +701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 1455718659814362, guid: bf43fe3ed09cec246b4f2f367f9817fa,
     type: 3}
-  EnemyPrefab2: {fileID: 6469489370865450290, guid: b6163ec3a8d47cd48bccc57af21dd3a2,
+  EnemyPrefab2: {fileID: 7661571907137745535, guid: 4da93cce50f4e0f4f92b4f2f3a4e28ce,
     type: 3}
   timeBetweenEnemies: 2
 --- !u!4 &940505748
