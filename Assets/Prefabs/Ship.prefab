@@ -154,8 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab1: {fileID: 1287502262990996, guid: 4dd15c7fe51711c48ba135fef149bbf8,
     type: 3}
-  bulletPrefab2: {fileID: 1287502262990996, guid: c896587613106a84fb5d0522399ed203,
-    type: 3}
   gunPosition: {fileID: 1438924084}
   whatGun: 1
   HealthSlider: {fileID: 0}

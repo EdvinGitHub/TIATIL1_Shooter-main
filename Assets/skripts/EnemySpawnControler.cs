@@ -41,7 +41,7 @@ public class EnemySpawnControler : MonoBehaviour
                 }
                 
             }
-            for(int i =20; i < amount; i += 30)
+            for(int i =20; i < amount; i += 100)
             {
                 Instantiate(EnemyPrefab3);
             }
