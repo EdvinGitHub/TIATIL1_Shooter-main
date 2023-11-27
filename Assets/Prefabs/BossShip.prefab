@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 4052994374707989401}
   m_Layer: 0
   m_Name: bossShip
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,4 +233,4 @@ MonoBehaviour:
   gunPosition2: {fileID: 1699668761070004000}
   gunPosition3: {fileID: 3659398575328752643}
   gunPosition4: {fileID: 870069881109007391}
-  speed: 0
+  bossHealth: {fileID: 0}

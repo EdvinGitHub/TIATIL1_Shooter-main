@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
+using UnityEngine.UI;
 public class Boss : MonoBehaviour
 {
 
@@ -20,35 +21,38 @@ public class Boss : MonoBehaviour
     [SerializeField]
     Transform gunPosition4;
     [SerializeField]
-    float speed = 5;
+    Slider bossHealth;
     float shotTimer = 0f;
-    int WhatShot;
+    int whatShot;
     float timeBetweenShots = 1.5f;
+    int CurrentHp = 1;
+    int maxhp = 100;
     void Start()
     {
-        shotTimer = Random.Range(0f, 1.5f);
-        {
-            float x = 0.11f;
-            float y = 3.9f;
-            Vector2 pos = new Vector2(x,y);
+        CurrentHp = maxhp;
 
-            transform.position = pos;
-        }
+
+        float x = 0.11f;
+        float y = 3.9f;
+        Vector2 pos = new Vector2(x,y);
+
+        transform.position = pos;
+        
     }
     void Update()
     {
         shotTimer += Time.deltaTime;
         if (shotTimer > timeBetweenShots)
         {   
-            WhatShot = Random.Range(1,3);
-            if(WhatShot == 1)
+            whatShot = Random.Range(1,3);
+            if(whatShot == 1)
             {
             Instantiate(bulletPrefab, gunPosition1.position, Quaternion.identity);
             Instantiate(bulletPrefab, gunPosition2.position, Quaternion.identity);
             Instantiate(bulletPrefab, gunPosition3.position, Quaternion.identity);
             Instantiate(bulletPrefab, gunPosition4.position, Quaternion.identity);
             }
-            if(WhatShot == 2)
+            if(whatShot == 2)
             {
             Quaternion rotation = Quaternion.Euler(0, 0, 0);
 
@@ -59,32 +63,31 @@ public class Boss : MonoBehaviour
             }
             shotTimer = 0f;
         }
-
-        Vector2 movement = new Vector2(0, -speed) * Time.deltaTime;
-
-        transform.Translate(movement);
-        if (transform.position.y < -Camera.main.orthographicSize - 2)
-        {
-            GameObject.Destroy(this.gameObject);
-        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "bolt")
         {
-            Destroy(this.gameObject);
-            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
-            Destroy(explosion, 0.3f);
-
+            CurrentHp--;
         }
         if (other.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
-            GameObject explosion = Instantiate(explosionPrefab , transform.position, Quaternion.identity);
-
-            Destroy(explosion, 0.3f);
-
+            CurrentHp--;
         }
+           if(CurrentHp <=0)
+          {
+            Destroy(this.gameObject);
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+            Destroy(explosion, 0.7f);
+            }
+    UpdateHealthSlider();
     }
+
+     private void UpdateHealthSlider()
+  {
+    bossHealth.maxValue = maxhp;
+    bossHealth.value = CurrentHp;
+
+  }
 }
