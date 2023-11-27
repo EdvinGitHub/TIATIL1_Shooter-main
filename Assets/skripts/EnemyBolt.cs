@@ -8,7 +8,7 @@ public class EnemyBolt : MonoBehaviour
   // [SerializeField]
 
   // Update is called once per frame
-  float speed = -8;
+  float speed = -7;
   void Update()
   {
 

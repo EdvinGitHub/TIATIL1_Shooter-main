@@ -27,6 +27,8 @@ public class ShipController : MonoBehaviour
   Slider HealthSlider;
   [SerializeField]
   TMP_Text healthText;
+  [SerializeField]
+  int amountOfShots = 5;
   float shotTimer = 0;
   float timeBetweenShots = 0.5f;
 
@@ -89,7 +91,12 @@ public class ShipController : MonoBehaviour
           rotation.z +=0.2f;
           Instantiate(bulletPrefab1, gunPosition.position, rotation);
           shotTimer = 0;
-  
+          amountOfShots--;
+
+        }
+        if (amountOfShots <= 0)
+        {
+          whatGun=1;
         }
       }
     }
@@ -110,7 +117,7 @@ public class ShipController : MonoBehaviour
     }
     if (other.gameObject.tag == "Buff")
     {
-            
+          whatGun=1;  
   
     }
       UpdateHealthSlider(); 

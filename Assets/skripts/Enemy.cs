@@ -17,12 +17,15 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     GameObject bulletPrefab;
     [SerializeField]
+    GameObject buffPrefab;
+    [SerializeField]
     Transform gunPosition;
 
     [SerializeField]
     float speed = 5;
     float shotTimer = 0f;
     float timeBetweenShots = 1.5f;
+    int buffOrNot; 
     void Start()
     {
         shotTimer = Random.Range(0f, 1.5f);
@@ -52,11 +55,16 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        buffOrNot = Random.Range(1,10);
         if (other.gameObject.tag == "bolt")
         {
             Destroy(this.gameObject);
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
+            if(buffOrNot ==10)
+            {
+            GameObject buff = Instantiate(buffPrefab, transform.position, Quaternion.identity);
+            }
+            
             Destroy(explosion, 0.3f);
 
         }
@@ -64,7 +72,10 @@ public class Enemy : MonoBehaviour
         {
             Destroy(this.gameObject);
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
+            if(buffOrNot ==10)
+            {
+            GameObject buff = Instantiate(buffPrefab, transform.position, Quaternion.identity);
+            }
             Destroy(explosion, 0.3f);
 
         }

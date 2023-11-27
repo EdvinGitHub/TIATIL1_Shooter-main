@@ -124,8 +124,10 @@ MonoBehaviour:
     type: 3}
   bulletPrefab: {fileID: 1287502262990996, guid: 6c72b13de7def2845b556a23ccb0e488,
     type: 3}
+  buffPrefab: {fileID: 2600474271649926806, guid: a6988c4fae2f48440ac143708898d4d4,
+    type: 3}
   gunPosition: {fileID: 2512261166624041976}
-  speed: 5
+  speed: 4
 --- !u!61 &2512261166404961794
 BoxCollider2D:
   m_ObjectHideFlags: 0
