@@ -108,6 +108,11 @@ public class ShipController : MonoBehaviour
       CurrentHp -= 1;
 
     }
+    if (other.gameObject.tag == "Buff")
+    {
+            
+  
+    }
       UpdateHealthSlider(); 
       if (CurrentHp <= 0)
       {

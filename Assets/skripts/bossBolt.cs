@@ -16,7 +16,7 @@ public class bossBolt : MonoBehaviour
         
         Vector3 diraction = player.transform.position - transform.position;
         body.velocity = new Vector2(diraction.x, diraction.y).normalized * speed;
-        Quaternion rotation = Quaternion.Euler(0, 0, diraction.z);
+        
 
     }
 
