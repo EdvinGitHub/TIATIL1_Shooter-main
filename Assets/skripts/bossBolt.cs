@@ -28,7 +28,7 @@ public class bossBolt : MonoBehaviour
     Vector2 movement = new Vector2(moveX, moveY);
     if (Mathf.Abs(transform.position.x) > Camera.main.orthographicSize * Camera.main.aspect -0.5)
     {
-      transform.Translate(Vector2.left * movement.x);
+      GameObject.Destroy(this.gameObject);
   
     }
     }
