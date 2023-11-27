@@ -12,6 +12,8 @@ public class Boss : MonoBehaviour
     [SerializeField]
     GameObject bulletPrefab;
     [SerializeField]
+    GameObject bossBulletPrefab;
+    [SerializeField]
     Transform gunPosition1;
     [SerializeField]
     Transform gunPosition2;
@@ -22,19 +24,18 @@ public class Boss : MonoBehaviour
     Transform gunPosition4;
     [SerializeField]
     Slider bossHealth;
-    [SerializeField]
-    Transform player;
+   
     float shotTimer = 0f;
     int whatShot;
     float timeBetweenShots = 1.5f;
     int CurrentHp = 1;
     int maxhp = 100;
   
-
     void Start()
     {
         CurrentHp = maxhp;
 
+   
 
         float x = 0.11f;
         float y = 3.9f;
@@ -59,12 +60,13 @@ public class Boss : MonoBehaviour
             if(whatShot == 2)
             {
         
+            
             Quaternion rotation = Quaternion.Euler(0, 0, 0);
-      
-            Instantiate(bulletPrefab, gunPosition1.position, rotation);
-            Instantiate(bulletPrefab, gunPosition2.position, rotation);
-            Instantiate(bulletPrefab, gunPosition3.position, rotation);
-            Instantiate(bulletPrefab, gunPosition4.position, rotation);
+
+            Instantiate(bossBulletPrefab, gunPosition1.position, Quaternion.identity);
+            Instantiate(bossBulletPrefab, gunPosition2.position, Quaternion.identity);
+            Instantiate(bossBulletPrefab, gunPosition3.position, Quaternion.identity);
+            Instantiate(bossBulletPrefab, gunPosition4.position, Quaternion.identity);
             }
             shotTimer = 0f;
         }

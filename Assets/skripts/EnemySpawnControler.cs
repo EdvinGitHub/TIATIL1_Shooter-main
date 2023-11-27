@@ -20,6 +20,7 @@ public class EnemySpawnControler : MonoBehaviour
     int enemyAB;
     string text; 
     int enemySpawned;
+    int i = 20;
     void Update()
     {   
         timer += Time.deltaTime;
@@ -41,8 +42,9 @@ public class EnemySpawnControler : MonoBehaviour
                 }
                 
             }
-            for(int i =20; i < amount; i += 100)
+            if(i < amount)
             {
+                i += enemySpawned * 7;
                 Instantiate(EnemyPrefab3);
             }
             enemySpawned++;

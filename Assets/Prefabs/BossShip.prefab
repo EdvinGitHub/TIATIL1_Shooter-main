@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 2078497117027341405}
   m_Layer: 0
   m_Name: bossShip
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,12 +198,13 @@ MonoBehaviour:
     type: 3}
   bulletPrefab: {fileID: 1287502262990996, guid: 6c72b13de7def2845b556a23ccb0e488,
     type: 3}
+  bossBulletPrefab: {fileID: 2046062512422406232, guid: 31bf9bb0fd0c3314991f7ebfb1d20eb6,
+    type: 3}
   gunPosition1: {fileID: 322428154120414748}
   gunPosition2: {fileID: 4809394568912103148}
   gunPosition3: {fileID: 2857480955627952212}
   gunPosition4: {fileID: 6828880203925428905}
   bossHealth: {fileID: 0}
-  player: {fileID: 0}
 --- !u!1 &8336009410650258054
 GameObject:
   m_ObjectHideFlags: 0
