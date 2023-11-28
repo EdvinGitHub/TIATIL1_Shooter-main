@@ -27,7 +27,7 @@ public class Boss : MonoBehaviour
    
     float shotTimer = 0f;
     int whatShot;
-    float timeBetweenShots = 1.5f;
+    float timeBetweenShots = 2f;
     int CurrentHp = 1;
     int maxhp = 45;
   
