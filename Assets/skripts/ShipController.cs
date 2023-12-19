@@ -66,14 +66,14 @@ public class ShipController : MonoBehaviour
       transform.Translate(Vector2.left * movement.x);
   
     }
-    if(Input.GetKeyDown(KeyCode.X))
-    {
-      whatGun = 1; 
-    }
-    if(Input.GetKeyDown(KeyCode.Z))
-    {
-      whatGun = 0; 
-    }
+    // if(Input.GetKeyDown(KeyCode.X))
+    // {
+    //   whatGun = 1; 
+    // }
+    // if(Input.GetKeyDown(KeyCode.Z))
+    // {
+    //   whatGun = 0; 
+    // }
     shotTimer += Time.deltaTime;
 
     if (Input.GetAxisRaw("Fire1") > 0 && shotTimer > timeBetweenShots)

@@ -29,12 +29,12 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         shotTimer = Random.Range(0f, 1.5f);
-        {
-            float x = Random.Range(-5f, 5f);
-            Vector2 pos = new Vector2(x, Camera.main.orthographicSize + 1);
+        
+        float x = Random.Range(-5f, 5f);
+        Vector2 pos = new Vector2(x, Camera.main.orthographicSize + 1);
 
-            transform.position = pos;
-        }
+        transform.position = pos;
+    
     }
     void Update()
     {
