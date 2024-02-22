@@ -5,12 +5,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Rendering;
-public class ShipController : MonoBehaviour
+public class ShipController : Entity
 {
-  int CurrentHp = 1;
+
   int maxhp = 3;
+  
+  [SerializeField]
+  float maxSpeed = 6;
   void Start()
   {
+    speed = maxSpeed;
     CurrentHp = maxhp;
 
   }
@@ -27,7 +31,7 @@ public class ShipController : MonoBehaviour
   Slider HealthSlider;
   [SerializeField]
   TMP_Text healthText;
-  [SerializeField]
+
   int amountOfShots = 5;
   float shotTimer = 0;
   float timeBetweenShots = 0.5f;
@@ -35,8 +39,8 @@ public class ShipController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    Quaternion rotation = Quaternion.Euler(0, 0, 0);
-    float speed = 5; // rutor per sekund
+
+  
 
     float moveX = Input.GetAxisRaw("Horizontal");
     float moveY = Input.GetAxisRaw("Vertical");
@@ -59,7 +63,7 @@ public class ShipController : MonoBehaviour
      
     // }
 
-    print(Camera.main.aspect);
+    // print(Camera.main.aspect);
 
     if (Mathf.Abs(transform.position.x) > Camera.main.orthographicSize * Camera.main.aspect -0.5)
     {
@@ -78,6 +82,7 @@ public class ShipController : MonoBehaviour
 
     if (Input.GetAxisRaw("Fire1") > 0 && shotTimer > timeBetweenShots)
     {
+      Quaternion rotation = Quaternion.Euler(0, 0, 0);
       if (whatGun == 0)
       {
       Instantiate(bulletPrefab1, gunPosition.position, Quaternion.identity);
@@ -92,7 +97,7 @@ public class ShipController : MonoBehaviour
           Instantiate(bulletPrefab1, gunPosition.position, rotation);
 
         }
-          shotTimer = 0;
+        shotTimer = 0;
         amountOfShots--;
         if (amountOfShots <= 0)
         {
@@ -118,7 +123,7 @@ public class ShipController : MonoBehaviour
     }
     if (other.gameObject.tag == "Buff")
     {
-          whatGun=1;  
+      whatGun=1;  
   
     }
       UpdateHealthSlider(); 

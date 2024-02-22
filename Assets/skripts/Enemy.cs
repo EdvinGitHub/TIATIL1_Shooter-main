@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Entity 
 {
     // Start is called before the first frame update
     // void Start()
@@ -22,12 +22,13 @@ public class Enemy : MonoBehaviour
     Transform gunPosition;
 
     [SerializeField]
-    float speed = 5;
+    float maxSpeed = 5;
     float shotTimer = 0f;
     float timeBetweenShots = 1.5f;
     int buffOrNot; 
     void Start()
     {
+        speed = maxSpeed;
         shotTimer = Random.Range(0f, 1.5f);
         
         float x = Random.Range(-5f, 5f);

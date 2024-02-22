@@ -526,7 +526,6 @@ GameObject:
   - component: {fileID: 744000532}
   - component: {fileID: 744000531}
   - component: {fileID: 744000530}
-  - component: {fileID: 744000534}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -618,23 +617,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &744000534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744000529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b834406e9fc02eb4bbc2973ef4e9e204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 0}
-  bulletPrefab: {fileID: 0}
-  buffPrefab: {fileID: 0}
-  gunPosition: {fileID: 0}
-  speed: 5
 --- !u!1 &795585505
 GameObject:
   m_ObjectHideFlags: 0
