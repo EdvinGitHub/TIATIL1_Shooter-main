@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-public class Boss : MonoBehaviour
+public class Boss : Entity
 {
 
     [SerializeField]
@@ -28,7 +28,7 @@ public class Boss : MonoBehaviour
     float shotTimer = 0f;
     int whatShot;
     float timeBetweenShots = 2f;
-    int CurrentHp = 1;
+    
     int maxhp = 45;
   
     void Start()

@@ -12,7 +12,7 @@ public class ShipController : Entity
   
   [SerializeField]
   float maxSpeed = 6;
-  void Start()
+  void Awake()
   {
     speed = maxSpeed;
     CurrentHp = maxhp;
