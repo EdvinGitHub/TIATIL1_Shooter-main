@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 2078497117027341405}
   m_Layer: 0
   m_Name: bossShip
-  m_TagString: enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efc7c65a5769604c8ac925556ce1cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  CurrentHp: 0
   explosionPrefab: {fileID: 1052859802758272, guid: 7e5c5b1c1b18764459c69710c7dc4adc,
     type: 3}
   bulletPrefab: {fileID: 1287502262990996, guid: 6c72b13de7def2845b556a23ccb0e488,

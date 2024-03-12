@@ -22,7 +22,7 @@ public class Enemy : Entity
     Transform gunPosition;
 
     [SerializeField]
-    float maxSpeed = 5;
+    float maxSpeed;
     float shotTimer = 0f;
     float timeBetweenShots = 1.5f;
     int buffOrNot; 

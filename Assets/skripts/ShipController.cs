@@ -111,16 +111,12 @@ public class ShipController : Entity
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    if (other.gameObject.tag == "enemy")
+    if (other.gameObject.tag == "enemy"||other.gameObject.tag == "EnemyBolt"||other.gameObject.tag == "Boss")
     {
       CurrentHp -= 1;
 
     }
-    if (other.gameObject.tag == "EnemyBolt")
-    {
-      CurrentHp -= 1;
-
-    }
+   
     if (other.gameObject.tag == "Buff")
     {
       whatGun=1;  

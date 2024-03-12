@@ -31,7 +31,7 @@ public class Boss : Entity
     
     int maxhp = 45;
   
-    void Start()
+    void Awake()
     {
         CurrentHp = maxhp;
 
@@ -85,7 +85,7 @@ public class Boss : Entity
         {
             Destroy(this.gameObject);
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
+            
             Destroy(explosion, 0.7f);
         }
     UpdateHealthSlider();

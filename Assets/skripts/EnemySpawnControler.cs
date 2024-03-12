@@ -23,10 +23,15 @@ public class EnemySpawnControler : MonoBehaviour
     int i = 20;
     void Update()
     {   
+        amount=0;
         timer += Time.deltaTime;
         if (timer > timeBetweenEnemies)
         {
             int numberToSpawn = 1 + enemySpawned / 3;
+            if(numberToSpawn >= 15)
+            {
+                
+            }
 
             for(int i =0; i < numberToSpawn; numberToSpawn--)
             {
