@@ -9,13 +9,14 @@ public class bossBolt : MonoBehaviour
     Rigidbody2D body;
     [SerializeField]
     float speed;
-    void Start()
+    void Awake()
     {
         body = GetComponent<Rigidbody2D>(); 
         player = GameObject.FindGameObjectWithTag("Player");
         
         Vector3 diraction = player.transform.position - transform.position;
-        body.velocity = new Vector2(diraction.x, diraction.y).normalized * speed;
+        body.velocity = new Vector3(diraction.x, diraction.y, body.rotation).normalized * speed;
+        
         
 
     }

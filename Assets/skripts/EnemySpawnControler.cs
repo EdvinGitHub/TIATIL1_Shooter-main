@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class EnemySpawnControler : MonoBehaviour
 {
-    bool yes;
+    
     [SerializeField]
     GameObject EnemyPrefab1;
     [SerializeField]
@@ -15,18 +15,21 @@ public class EnemySpawnControler : MonoBehaviour
     GameObject EnemyPrefab3;
     float timer = 0;
     [SerializeField] TMP_Text Amount;
-
+    bool yes;
     int amount;
     float timeBetweenEnemies = 1.5f;
     int enemyAB;
     string text; 
-    int enemySpawned;
+    int enemySpawned=60;
     int i = 20;
     void Update()
     {   
         amount=0;
+        IsBossAlive(); 
+        if(yes== false)
+        {
         timer += Time.deltaTime;
-        if (timer > timeBetweenEnemies)
+        if(timer > timeBetweenEnemies)
         {
             int numberToSpawn = 1 + enemySpawned / 3;
             if(numberToSpawn >= 15)
@@ -50,13 +53,12 @@ public class EnemySpawnControler : MonoBehaviour
             }
             if(i < amount)
             {
-                IsBossAlive();
-                if (yes == false)
-                {
+                
+               
                 i += enemySpawned * 20;
                 Instantiate(EnemyPrefab3);
                 enemySpawned = 0;
-                }
+                
                 
             }
             enemySpawned++;
@@ -68,11 +70,13 @@ public class EnemySpawnControler : MonoBehaviour
 
             // for (int i = 15, enemySpawned / i )
         }
-        
+        }
     }
 public void IsBossAlive()
 {
-    yes = GameObject.FindGameObjectWithTag("Boss");
+    if(GameObject.FindGameObjectWithTag("Boss")== true)
+    {yes = true;}
+    else{yes= false;}
 }
      private void UpdateText()
   {
