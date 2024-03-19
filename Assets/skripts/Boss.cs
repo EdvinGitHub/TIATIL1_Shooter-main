@@ -24,6 +24,9 @@ public class Boss : Entity
     Transform gunPosition4;
     [SerializeField]
     Slider bossHealth;
+    [SerializeField]
+    TMP_Text bossHealthText;
+    
    
     float shotTimer = 0f;
     int whatShot;
@@ -34,8 +37,8 @@ public class Boss : Entity
     void Awake()
     {
         CurrentHp = maxhp;
-
-   
+        bossHealth = GameObject.Find("BossHealthBar").GetComponent<Slider>();
+        bossHealthText = GameObject.Find("BossHealthText").GetComponent<TMP_Text>();
 
         float x = 0.11f;
         float y = 3.9f;
@@ -96,5 +99,6 @@ public class Boss : Entity
     bossHealth.maxValue = maxhp;
     bossHealth.value = CurrentHp;
 
+    bossHealthText.text = CurrentHp + "/" + maxhp;
   }
 }

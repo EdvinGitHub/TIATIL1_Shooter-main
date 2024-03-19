@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 36332943893308487}
   - component: {fileID: 1823254636580412905}
   - component: {fileID: 2078497117027341405}
+  - component: {fileID: -379434590810839181}
   m_Layer: 0
   m_Name: bossShip
   m_TagString: Boss
@@ -207,6 +208,33 @@ MonoBehaviour:
   gunPosition3: {fileID: 2857480955627952212}
   gunPosition4: {fileID: 6828880203925428905}
   bossHealth: {fileID: 0}
+  bossHealthText: {fileID: 0}
+--- !u!61 &-379434590810839181
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8231357265436316565}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.016826034, y: -0.016825795}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.88, y: 6.27}
+    newSize: {x: 3.88, y: 6.27}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.971398, y: 5.3613987}
+  m_EdgeRadius: 0
 --- !u!1 &8336009410650258054
 GameObject:
   m_ObjectHideFlags: 0

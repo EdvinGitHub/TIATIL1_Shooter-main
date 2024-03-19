@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class EnemySpawnControler : MonoBehaviour
 {
+    bool yes;
     [SerializeField]
     GameObject EnemyPrefab1;
     [SerializeField]
@@ -49,8 +50,14 @@ public class EnemySpawnControler : MonoBehaviour
             }
             if(i < amount)
             {
+                IsBossAlive();
+                if (yes == false)
+                {
                 i += enemySpawned * 20;
                 Instantiate(EnemyPrefab3);
+                enemySpawned = 0;
+                }
+                
             }
             enemySpawned++;
 
@@ -63,6 +70,10 @@ public class EnemySpawnControler : MonoBehaviour
         }
         
     }
+public void IsBossAlive()
+{
+    yes = GameObject.FindGameObjectWithTag("Boss");
+}
      private void UpdateText()
   {
     text = amount.ToString();
