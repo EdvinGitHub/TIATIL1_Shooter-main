@@ -27,7 +27,7 @@ public class bossBolt : MonoBehaviour
     float moveX = Input.GetAxisRaw("Horizontal");
     float moveY = Input.GetAxisRaw("Vertical");
     Vector2 movement = new Vector2(moveX, moveY);
-    if (Mathf.Abs(transform.position.x) > Camera.main.orthographicSize * Camera.main.aspect -0.5)
+    if (Mathf.Abs(transform.position.x) > Camera.main.orthographicSize * Camera.main.aspect -0.5 || Mathf.Abs(transform.position.y) > Camera.main.orthographicSize * Camera.main.aspect -0.5)
     {
       GameObject.Destroy(this.gameObject);
   

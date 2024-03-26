@@ -20,20 +20,25 @@ public class EnemySpawnControler : MonoBehaviour
     float timeBetweenEnemies = 1.5f;
     int enemyAB;
     string text; 
-    int enemySpawned=60;
-    int i = 20;
+    int enemySpawned;
+
+    int numberToSpawn;
     void Update()
     {   
         amount=0;
+        numberToSpawn = 1 + enemySpawned / 3;
         IsBossAlive(); 
         if(yes== false)
         {
         timer += Time.deltaTime;
         if(timer > timeBetweenEnemies)
         {
-            int numberToSpawn = 1 + enemySpawned / 3;
-            if(numberToSpawn >= 15)
+            if(numberToSpawn >= 12 )
             {
+                Instantiate(EnemyPrefab3);
+                enemySpawned = 0;
+                numberToSpawn = 0;
+                
                 
             }
 
@@ -49,16 +54,6 @@ public class EnemySpawnControler : MonoBehaviour
                 {
                     Instantiate(EnemyPrefab1);
                 }
-                
-            }
-            if(i < amount)
-            {
-                
-               
-                i += enemySpawned * 20;
-                Instantiate(EnemyPrefab3);
-                enemySpawned = 0;
-                
                 
             }
             enemySpawned++;
