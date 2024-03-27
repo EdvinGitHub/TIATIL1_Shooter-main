@@ -15,30 +15,31 @@ public class EnemySpawnControler : MonoBehaviour
     GameObject EnemyPrefab3;
     float timer = 0;
     [SerializeField] TMP_Text Amount;
-    bool yes;
+    bool bossAlive;
     int amount;
     float timeBetweenEnemies = 1.5f;
     int enemyAB;
     string text; 
-    int enemySpawned;
-
+    int enemySpawned = 45;
+    int bossSpawns;
     int numberToSpawn;
     void Update()
     {   
         amount=0;
         numberToSpawn = 1 + enemySpawned / 3;
         IsBossAlive(); 
-        if(yes== false)
+        if(bossAlive== false)
         {
         timer += Time.deltaTime;
         if(timer > timeBetweenEnemies)
         {
             if(numberToSpawn >= 12 )
             {
+   
                 Instantiate(EnemyPrefab3);
                 enemySpawned = 0;
                 numberToSpawn = 0;
-                
+                bossSpawns++;
                 
             }
 
@@ -70,8 +71,8 @@ public class EnemySpawnControler : MonoBehaviour
 public void IsBossAlive()
 {
     if(GameObject.FindGameObjectWithTag("Boss")== true)
-    {yes = true;}
-    else{yes= false;}
+    {bossAlive = true;}
+    else{bossAlive= false;}
 }
      private void UpdateText()
   {
