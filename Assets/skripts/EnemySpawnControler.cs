@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEngine.UI;
+
 
 public class EnemySpawnControler : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class EnemySpawnControler : MonoBehaviour
     string text; 
     int enemySpawned = 45;
     int bossSpawns;
+    
     int numberToSpawn;
     void Update()
     {   
@@ -30,16 +32,20 @@ public class EnemySpawnControler : MonoBehaviour
         IsBossAlive(); 
         if(bossAlive== false)
         {
+        if(bossSpawns >= 3)
+        {SceneManager.LoadScene(1);}
         timer += Time.deltaTime;
         if(timer > timeBetweenEnemies)
         {
-            if(numberToSpawn >= 12 )
+            if(numberToSpawn >= 2 )
             {
    
                 Instantiate(EnemyPrefab3);
                 enemySpawned = 0;
                 numberToSpawn = 0;
                 bossSpawns++;
+          
+                
                 
             }
 
@@ -73,6 +79,7 @@ public void IsBossAlive()
     if(GameObject.FindGameObjectWithTag("Boss")== true)
     {bossAlive = true;}
     else{bossAlive= false;}
+   
 }
      private void UpdateText()
   {

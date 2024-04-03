@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Boss : Entity
 {
 
@@ -32,17 +33,17 @@ public class Boss : Entity
     int whatShot;
     float timeBetweenShots = 2f;
     
-    int maxhp = 45;
+    int maxhp = 2;
   
     void Awake()
     {
         CurrentHp = maxhp;
         bossHealth = GameObject.Find("BossHealthBar").GetComponent<Slider>();
         bossHealthText = GameObject.Find("BossHealthText").GetComponent<TMP_Text>();
+        // bossHealth.gameObject.SetActive(true);
+        // bossHealthText.gameObject.SetActive(true);
         
-        bossHealth.gameObject.SetActive(true);
-        bossHealthText.gameObject.SetActive(true);
-     
+  
 
         float x = 0.11f;
         float y = 3.9f;
@@ -93,9 +94,10 @@ public class Boss : Entity
         {
             Destroy(this.gameObject);
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            bossHealth.gameObject.SetActive(false);
-        bossHealthText.gameObject.SetActive(false);
+            // bossHealth.gameObject.SetActive(false);
+            // bossHealthText.gameObject.SetActive(false);
             Destroy(explosion, 0.7f);
+        
         }
     UpdateHealthSlider();
     }
