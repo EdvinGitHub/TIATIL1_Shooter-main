@@ -15,8 +15,7 @@ public class EnemyBolt : MonoBehaviour
     Vector2 movement = new Vector2(0, speed) * Time.deltaTime;
 
     transform.Translate(movement);
-
-    
+    transform.Rotate(0,0,0);
     
     if (transform.position.y < -Camera.main.orthographicSize - 2)
     {

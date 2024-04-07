@@ -21,23 +21,23 @@ public class EnemySpawnControler : MonoBehaviour
     float timeBetweenEnemies = 1.5f;
     int enemyAB;
     string text; 
-    int enemySpawned = 45;
+    int enemySpawned;
     int bossSpawns;
     
     int numberToSpawn;
     void Update()
     {   
         amount=0;
-        numberToSpawn = 1 + enemySpawned / 3;
+        numberToSpawn = 1 + enemySpawned / 2;
         IsBossAlive(); 
         if(bossAlive== false)
         {
         if(bossSpawns >= 3)
-        {SceneManager.LoadScene(1);}
+        {SceneManager.LoadScene(3);}
         timer += Time.deltaTime;
         if(timer > timeBetweenEnemies)
         {
-            if(numberToSpawn >= 2 )
+            if(numberToSpawn >= 8 )
             {
    
                 Instantiate(EnemyPrefab3);

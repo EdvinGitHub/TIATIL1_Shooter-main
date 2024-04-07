@@ -14,6 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3321279946633789676, guid: 6c72b13de7def2845b556a23ccb0e488,
         type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3321279946633789676, guid: 6c72b13de7def2845b556a23ccb0e488,
+        type: 3}
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
