@@ -37,7 +37,7 @@ public class EnemySpawnControler : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > timeBetweenEnemies)
         {
-            if(numberToSpawn >= 8 )
+            if(numberToSpawn >= 1 )
             {
    
                 Instantiate(EnemyPrefab3);

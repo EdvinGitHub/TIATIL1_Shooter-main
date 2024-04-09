@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 public class EnemyBolt : MonoBehaviour
 {
+float speed = -6; 
   // Start is called before the first frame update
   // [SerializeField]
 
   // Update is called once per frame
-  float speed = -6;
+
   void Update()
   {
 
     Vector2 movement = new Vector2(0, speed) * Time.deltaTime;
 
     transform.Translate(movement);
-    transform.Rotate(0,0,0);
+
     
     if (transform.position.y < -Camera.main.orthographicSize - 2)
     {
