@@ -767,6 +767,8 @@ MonoBehaviour:
     type: 3}
   EnemyPrefab3: {fileID: 8231357265436316565, guid: 591d8761cd3bffa47af2371ea278b432,
     type: 3}
+  EnemyPrefab4: {fileID: 1885119750320578148, guid: 98a528aafef59c047b77e34ee2bf81c1,
+    type: 3}
   Amount: {fileID: 2031369764}
 --- !u!4 &940505748
 Transform:

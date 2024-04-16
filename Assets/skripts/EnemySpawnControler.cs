@@ -14,6 +14,8 @@ public class EnemySpawnControler : MonoBehaviour
     GameObject EnemyPrefab2;
     [SerializeField]
     GameObject EnemyPrefab3;
+    [SerializeField]
+    GameObject EnemyPrefab4;
     float timer = 0;
     [SerializeField] TMP_Text Amount;
     bool bossAlive;
@@ -37,7 +39,7 @@ public class EnemySpawnControler : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > timeBetweenEnemies)
         {
-            if(numberToSpawn >= 1 )
+            if(numberToSpawn >= 12 )
             {
    
                 Instantiate(EnemyPrefab3);
@@ -57,7 +59,11 @@ public class EnemySpawnControler : MonoBehaviour
                 {
                     Instantiate(EnemyPrefab2);
                 }
-                else
+                if (enemyAB == 1)
+                {
+                    Instantiate(EnemyPrefab4);
+                }
+                if (enemyAB == 2)
                 {
                     Instantiate(EnemyPrefab1);
                 }

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 95663737370079626}
   - component: {fileID: -4751582528547012515}
   - component: {fileID: 2765859030962099003}
-  - component: {fileID: -3321279946633789676}
   m_Layer: 0
   m_Name: EnemyBolt
   m_TagString: EnemyBolt
@@ -136,24 +135,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.3125, y: 0.8125}
   m_Direction: 0
---- !u!50 &-3321279946633789676
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287502262990996}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0.2
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
