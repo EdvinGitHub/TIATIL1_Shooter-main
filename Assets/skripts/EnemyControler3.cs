@@ -33,7 +33,7 @@ public class EnemyControler3 : Entity
     {
         x = Random.Range(-5f, 5f);
         speed = maxSpeed;
-        shotTimer = Random.Range(0f, 1.5f);
+        shotTimer = Random.Range(-1f, 2f);
         
         Vector2 pos = new Vector2(x, Camera.main.orthographicSize + 1);
 
@@ -52,16 +52,14 @@ public class EnemyControler3 : Entity
 
         Vector2 movement = new Vector2(0, -speed) * Time.deltaTime;
 
-       print("hej");
+        // Fixade fiende 3 movment så att den kan inte jitra på plats
         if(transform.position.x>= x +2)
         {
-            maxSpeedX = -maxSpeedX;
-            print("hay");
+            maxSpeedX = 3;
         }
         else if(transform.position.x<=x -2)
         {
-           maxSpeedX = -maxSpeedX;
-            print("suck");
+           maxSpeedX = -3;
         }
         movement = new Vector2(maxSpeedX, -speed) * Time.deltaTime;
         transform.Translate(movement);

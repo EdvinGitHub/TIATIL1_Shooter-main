@@ -29,7 +29,7 @@ public class Enemy : Entity
     void Awake()
     {
         speed = maxSpeed;
-        shotTimer = Random.Range(0f, 1.5f);
+        shotTimer = Random.Range(-1f, 2f);
         
         float x = Random.Range(-5f, 5f);
         Vector2 pos = new Vector2(x, Camera.main.orthographicSize + 1);

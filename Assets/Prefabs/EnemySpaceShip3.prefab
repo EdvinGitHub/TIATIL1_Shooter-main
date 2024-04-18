@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebad525c0fd50b241b8a1b7dba56d5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -3
+  speed: 0
   CurrentHp: 1
   explosionPrefab: {fileID: 1052859802758272, guid: 7e5c5b1c1b18764459c69710c7dc4adc,
     type: 3}
@@ -108,7 +108,7 @@ MonoBehaviour:
   buffPrefab: {fileID: 2600474271649926806, guid: a6988c4fae2f48440ac143708898d4d4,
     type: 3}
   gunPosition: {fileID: 5885892219703401102}
-  maxSpeed: -3
+  maxSpeed: -4
   maxSpeedX: 0
 --- !u!61 &5203827038730051300
 BoxCollider2D:

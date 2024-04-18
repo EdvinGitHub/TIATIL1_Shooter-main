@@ -102,7 +102,7 @@ public class ShipController : Entity
         if (amountOfShots <= 0)
         {
           whatGun=0;
-          amountOfShots=20;
+          amountOfShots=5;
         }
       }
     }
