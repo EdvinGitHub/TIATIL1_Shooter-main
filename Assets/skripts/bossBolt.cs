@@ -13,7 +13,7 @@ public class bossBolt : MonoBehaviour
   {
     body = GetComponent<Rigidbody2D>();
     player = GameObject.FindGameObjectWithTag("Player");
-
+    // vart den ska åka 
     Vector3 diraction = player.transform.position - transform.position;
     Vector2 rotation = transform.position - player.transform.position;
     body.velocity = new Vector3(diraction.x, diraction.y, body.rotation).normalized * speed;
@@ -27,6 +27,7 @@ public class bossBolt : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    // kollar om den är utanför skärmen 
     if (Mathf.Abs(transform.position.x) > Camera.main.orthographicSize * Camera.main.aspect - 0.5 || Mathf.Abs(transform.position.y) > Camera.main.orthographicSize * Camera.main.aspect - 0.5)
     {
       GameObject.Destroy(this.gameObject);

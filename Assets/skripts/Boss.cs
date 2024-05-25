@@ -24,7 +24,9 @@ public class Boss : Entity
     [SerializeField]
     Transform gunPosition4;
     [SerializeField]
-    Slider bossHealth;
+    Image bossHealth;
+    [SerializeField]
+    Image bossHealth2;
     [SerializeField]
     TMP_Text bossHealthText;
     
@@ -33,15 +35,21 @@ public class Boss : Entity
     int whatShot;
     float timeBetweenShots = 2f;
     
-    int maxhp = 2;
+    int maxhp = 25;
   
     void Awake()
     {
+        // boss saker
         CurrentHp = maxhp;
-        bossHealth = GameObject.Find("BossHealthBar").GetComponent<Slider>();
+        bossHealth = GameObject.Find("BossHpFull").GetComponent<Image>();
+        bossHealth2 = GameObject.Find("HpNo1").GetComponent<Image>();
         bossHealthText = GameObject.Find("BossHealthText").GetComponent<TMP_Text>();
         // bossHealth.gameObject.SetActive(true);
         // bossHealthText.gameObject.SetActive(true);
+        bossHealth.GetComponent<Image>().enabled = true;
+        bossHealth2. GetComponent<Image>().enabled = true;
+        bossHealthText. GetComponent<TMP_Text>().enabled = true;
+
         
   
 
@@ -57,7 +65,9 @@ public class Boss : Entity
         shotTimer += Time.deltaTime;
         if (shotTimer > timeBetweenShots)
         {   
+            // vad den ska skuta 
             whatShot = Random.Range(1,5);
+            // om den ska skuta normala skott
             if(whatShot == 1)
             {
             Instantiate(bulletPrefab, gunPosition1.position, Quaternion.identity);
@@ -67,11 +77,7 @@ public class Boss : Entity
             }
             if(whatShot > 1)
             {
-        
-            
-            Quaternion rotation = Quaternion.Euler(0, 0, 0);
-            
-
+                // ska skuta boss skot 
             Instantiate(bossBulletPrefab, gunPosition1.position, Quaternion.identity);
             Instantiate(bossBulletPrefab, gunPosition2.position, Quaternion.identity);
             Instantiate(bossBulletPrefab, gunPosition3.position, Quaternion.identity);
@@ -80,8 +86,10 @@ public class Boss : Entity
             shotTimer = 0f;
         }
     }
+        // kollar om den kolidar med något
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // minskar hp
         if (other.gameObject.tag == "bolt")
         {
             CurrentHp--;
@@ -90,23 +98,27 @@ public class Boss : Entity
         {
             CurrentHp--;
         }
+        // kollar om man dog
         if(CurrentHp <=0)
         {
+            bossHealth.GetComponent<Image>().enabled = false;
+            bossHealth2. GetComponent<Image>().enabled = false;
+            bossHealthText. GetComponent<TMP_Text>().enabled = false;
             Destroy(this.gameObject);
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            // bossHealth.gameObject.SetActive(false);
-            // bossHealthText.gameObject.SetActive(false);
             Destroy(explosion, 0.7f);
         
         }
+        // updaterar UI
     UpdateHealthSlider();
     }
-
-     private void UpdateHealthSlider()
+    // updaterrar text och hp silder för bossen 
+private void UpdateHealthSlider()
   {
-    bossHealth.maxValue = maxhp;
-    bossHealth.value = CurrentHp;
+   
+    bossHealth.fillAmount = CurrentHp /25f;
 
     bossHealthText.text = CurrentHp + "/" + maxhp;
   }
+
 }

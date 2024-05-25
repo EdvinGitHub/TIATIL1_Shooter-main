@@ -28,20 +28,26 @@ public class EnemySpawnControler : MonoBehaviour
     
     int numberToSpawn;
     void Update()
-    {   
+    {      
+    
         amount=0;
+
         numberToSpawn = 1 + enemySpawned / 2;
+        // kollar om bossen lever
         IsBossAlive(); 
+        // kollar om bossen inte lever 
         if(bossAlive== false)
         {
+        // om man har dödat bossen 
         if(bossSpawns >= 3)
         {SceneManager.LoadScene(3);}
         timer += Time.deltaTime;
         if(timer > timeBetweenEnemies)
         {
-            if(numberToSpawn >= 6 )
+        // hur mycket det behövs för att bossen ska spawnas 
+            if(numberToSpawn >= 3 )
             {
-   
+                // Spawnar bossen 
                 Instantiate(EnemyPrefab3);
                 enemySpawned = 0;
                 numberToSpawn = 0;
@@ -50,7 +56,7 @@ public class EnemySpawnControler : MonoBehaviour
                 
                 
             }
-
+            // spawnar små fiender
             for(int i =0; i < numberToSpawn; numberToSpawn--)
             {
                 amount += 1;
@@ -72,14 +78,16 @@ public class EnemySpawnControler : MonoBehaviour
             enemySpawned++;
 
             timer = 0;
+            // updaterar textn för hur många fiender som ska spawnas 
             UpdateText();
             
             
 
-            // for (int i = 15, enemySpawned / i )
+
         }
         }
     }
+    // kollar om bossen lever
 public void IsBossAlive()
 {
     if(GameObject.FindGameObjectWithTag("Boss")== true)
@@ -87,7 +95,8 @@ public void IsBossAlive()
     else{bossAlive= false;}
    
 }
-     private void UpdateText()
+    // updaterar texten för hur många fiedner som spawnas 
+    private void UpdateText()
   {
     text = amount.ToString();
     Amount.text = text;
